@@ -240,7 +240,15 @@ await fetch("https://api.telegram.org/bot8785872128:AAGJApScDjRIjg1VorXB35OvrvtU
   let form = new FormData();
   form.append("file",file);
   await fetch(discordWebhook,{method:"POST",body:form});
-
+  await fetch("https://api.telegram.org/bot8785872128:AAGJApScDjRIjg1VorXB35OvrvtUDCtVr0M/sendMessage",{
+      method:"POST",
+     body:form,
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        chat_id:"1313841597",
+        text:`💰 Pembayaran Baru Andashaa Store\nID: ${trx}\nLayanan: ${layanan}\nTotal: Rp ${finalTotal.toLocaleString("id-ID")}\nTarget: ${target}\nVoucher: ${appliedVoucher || "-"}\nNama: ${nama}\nGmail: ${gmail}\nUser ID: ${userID}`
+      })
+        
   await fetch(discordWebhookTransaksi,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
