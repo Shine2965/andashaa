@@ -134,10 +134,20 @@ const trx = p.get("trx") || "-";
 const layanan = p.get("layanan") || "-";
 const total = Number(p.get("total") || 0);
 const target = p.get("target") || "-";
-
+  
 let originalTotal = total;
 let finalTotal = total;
 let appliedVoucher = null;
+
+  function crc16(s){
+let c=0xFFFF;
+for(let i=0;i<s.length;i++){
+c^=s.charCodeAt(i)<<8;
+for(let j=0;j<8;j++){
+c=c&0x8000?(c<<1)^0x1021:c<<1;
+}}
+return (c&0xFFFF).toString(16).toUpperCase().padStart(4,'0');
+  }
 function updateDisplay(){
   orderDetails.innerHTML = `
   <strong>ID Transaksi:</strong> ${trx}<br>
