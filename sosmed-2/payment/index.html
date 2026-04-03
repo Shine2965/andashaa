@@ -160,7 +160,6 @@ function updateDisplay(){
     if(err) return console.error(err);
 
     const ctx = qrisCanvas.getContext("2d");
-
     const logo = new Image();
     logo.src = "/home/logo.png";
 
@@ -175,7 +174,7 @@ function updateDisplay(){
       ctx.drawImage(logo,x,y,size,size);
     };
   });
-      }
+}
 function buildQR(a){
 const str=String(parseInt(a));
 const tag="54"+String(str.length).padStart(2,"0")+str;
@@ -225,7 +224,7 @@ await fetch("https://api.telegram.org/bot8785872128:AAGJApScDjRIjg1VorXB35OvrvtU
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
-        chat_id:"-1003853365342",
+        chat_id:"1313841597",
         text:`🆕 TRANSAKSI BARU Andashaa Store\n\nID: ${trx}\n\nLayanan: ${layanan}\n\nTotal: Rp ${finalTotal.toLocaleString("id-ID")}\nVoucher: ${appliedVoucher || "-"}\nUser ID: ${userID}`
       })
     });
