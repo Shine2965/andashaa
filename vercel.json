@@ -1,12 +1,12 @@
   {
   "redirects": [
     {
-      "source": "/home/",
+      "source": "/h/",
       "destination": "/tidaktersedia/",
       "permanent": true 
     },
     {
-      "source": "/sosmed-2/",
+      "source": "/sosmed-2/payment?",
       "destination": "/tidaktersedia/",
       "permanent": true
     },
