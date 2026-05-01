@@ -6,7 +6,7 @@
       "permanent": true 
     },
     {
-      "source": "/sosmed-2/payment?",
+      "source": "/sosmed-2/payment",
       "destination": "/tidaktersedia/",
       "permanent": true
     },
